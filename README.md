@@ -30,12 +30,16 @@ To build and run the project using Docker, follow these steps:
 
 *The marked values can be changed as needed
 
-## Endpoints
-### Swagger-ui - http://localhost:8080/swagger-ui/#/ - assuming 8080 was selected as port
 
-The server exposes the following endpoints:
+### Swagger-ui (assuming 8080 port was selected)
+``` 
+http://localhost:8080/swagger-ui/#/
+```
 
-# 1. Get average exchange rate for a currency on a specific date
+# Endpoints
+ The server exposes the following endpoints:
+
+## 1. Get average exchange rate for a currency on a specific date
 ### GET /api/currency/current-rate/{currencyCode}/{date}
 - `{currencyCode}`: A three-letter currency code from the NBP's table A (e.g., USD, EUR).
 - `{date}`: A date in the format YYYY-MM-DD.
@@ -48,7 +52,7 @@ curl -X GET "http://localhost:8080/api/currency/current-rate/USD/2023-04-21" -H 
 ```
 
 
-# 2. Get max and min average exchange rate for a currency for the last N quotations
+## 2. Get max and min average exchange rate for a currency for the last N quotations
 ### GET /api/currency/extrema/{currencyCode}/{n}
 - `{currencyCode}`: A three-letter currency code from the NBP's table A (e.g., USD, EUR).
 - `{n}`: An integer representing the number of quotations to consider (up to 255).
@@ -60,7 +64,7 @@ Example request:
 curl -X GET "http://localhost:8080/api/currency/extrema/EUR/10" -H "accept: */*"
 ```
 
-# 3. Get major difference between buy and ask rate for a currency for the last N quotations
+## 3. Get major difference between buy and ask rate for a currency for the last N quotations
 ### GET /api/currency/major-difference/{currencyCode}/{n}
 
 - `{currencyCode}`: A three-letter currency code from the NBP's table C (e.g., USD, EUR).
