@@ -1,6 +1,5 @@
 package com.example.CurrencyApp.Exception.ApplicationExceptions;
 
-import javax.xml.bind.ValidationException;
 
 public class InvalidCurrencyCodeException extends ApplicationValidationException {
 
