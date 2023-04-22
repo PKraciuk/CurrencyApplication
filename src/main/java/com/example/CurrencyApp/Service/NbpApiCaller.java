@@ -23,7 +23,7 @@ public class NbpApiCaller {
         restTemplate = new RestTemplate();
     }
 
-    @Cacheable(value = "externalApiCalls", key = "{#currencyKey, #date}")
+    @Cacheable(value = "NbpRateFromDateCall", key = "{#currencyKey, #date}")
     public ExchangeRateTableSingle getCurrentAvgValue(String currencyKey, String date) {
         String path = String.format(URL_RATE_DATE_FORMAT, "A", currencyKey, date);
         ResponseEntity<ExchangeRateTableSingle> response = performGetRequest(path);
@@ -31,7 +31,7 @@ public class NbpApiCaller {
         return response.getBody();
     }
 
-    @Cacheable(value = "externalApiCalls", key = "{#currencyKey, #quotationsNum}")
+    @Cacheable(value = "NbpLastRatesCall", key = "{#currencyKey, #quotationsNum}")
     public ExchangeRateTableSingle getAvgValues(String currencyKey, int quotationsNum) {
         String path = String.format(URL_LAST_QUOTATIONS_FORMAT, "A", currencyKey, quotationsNum);
         ResponseEntity<ExchangeRateTableSingle> response = performGetRequest(path);
@@ -39,7 +39,7 @@ public class NbpApiCaller {
         return response.getBody();
     }
 
-    @Cacheable(value = "externalApiCalls", key = "{#currencyKey, #quotationsNum}")
+    @Cacheable(value = "NbpLastSalesCall", key = "{#currencyKey, #quotationsNum}")
     public ExchangeRateTableSingle getSellRates(String currencyKey, int quotationsNum) {
         String path = String.format(URL_LAST_QUOTATIONS_FORMAT, "C", currencyKey, quotationsNum);
         ResponseEntity<ExchangeRateTableSingle> response = performGetRequest(path);
