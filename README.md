@@ -14,11 +14,14 @@ The goal is to query data from the Narodowy Bank Polski's public APIs and return
 
 To build and run the project using Docker, follow these steps:
 
-1. Clone the repository to your local machine: Git Clone https://github.com/PKraciuk/CurrencyApplication
-2. Build the Docker image by running this command after entering repository main folder : Docker build -t #ImageName# .
-3. Run the Docker container: Docker run #ImageName# -p #8080:8080# -t #ApplicationName#
+1. Clone the repository to your local machine: 
+    #### Git Clone https://github.com/PKraciuk/CurrencyApplication
+2. Build the Docker image by running this command after entering repository main folder : 
+    #### Docker build -t ImageName* .
+3. Run the Docker container: 
+    #### Docker run ImageName* -p 8080:8080* -t ApplicationName*
 
-The Values starting and ending with # can be changed as needed
+*The marked values can be changed as needed
 
 ## Endpoints
 ### Swagger-ui - http://localhost:8080/swagger-ui/#/ - assuming 8080 was selected as port
@@ -53,13 +56,11 @@ Returns the major difference between the buy and ask rates for the specified cur
 
 The following optional features have been implemented:
 
-- Unit tests
-- Docker image of the application
-- Swagger UI 
+- [x] Unit tests
+- [x] Docker image of the application
+- [x] Swagger UI 
 
 ## References
 
 - [Narodowy Bank Polski API User Manual](http://api.nbp.pl/)
-- [NBP Table A](https://nbp.pl/en/statistic-and-financial-reporting/rates/table-a/)
-- [NBP Table C](https://nbp.pl/en/statistic-and-financial-reporting/rates/table-c/)
 - [RESTful API Design Best Practices](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
