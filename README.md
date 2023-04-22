@@ -13,6 +13,7 @@ To build and run the project using Docker, follow these steps:
 The Values starting and ending with # can be changed as needed
 
 ## Endpoints
+### Swagger-ui - http://localhost:8080/swagger-ui/#/ - assuming 8080 was selected as port
 
 The server exposes the following endpoints:
 
