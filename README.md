@@ -15,11 +15,18 @@ The goal is to query data from the Narodowy Bank Polski's public APIs and return
 To build and run the project using Docker, follow these steps:
 
 1. Clone the repository to your local machine: 
-    #### Git Clone https://github.com/PKraciuk/CurrencyApplication
+    ```
+    Git Clone https://github.com/PKraciuk/CurrencyApplication
+    ```
+
 2. Build the Docker image by running this command after entering repository main folder : 
-    #### Docker build -t ImageName* .
+   ```
+   Docker build -t ImageName* .
+   ```
 3. Run the Docker container: 
-    #### Docker run ImageName* -p 8080:8080* -t ApplicationName*
+   ```
+   Docker run ImageName* -p 8080:8080* -t ApplicationName*
+   ```
 
 *The marked values can be changed as needed
 
@@ -35,6 +42,11 @@ The server exposes the following endpoints:
 
 Returns the average exchange rate for the specified currency on the specified date.
 
+Example request:
+```
+curl -X GET "http://localhost:8080/api/currency/current-rate/USD/2023-04-21" -H "accept: */*"
+```
+
 
 # 2. Get max and min average exchange rate for a currency for the last N quotations
 ### GET /api/currency/extrema/{currencyCode}/{n}
@@ -43,6 +55,10 @@ Returns the average exchange rate for the specified currency on the specified da
 
 Returns the maximum and minimum average exchange rates for the specified currency over the last N quotations.
 
+Example request:
+```
+curl -X GET "http://localhost:8080/api/currency/extrema/EUR/10" -H "accept: */*"
+```
 
 # 3. Get major difference between buy and ask rate for a currency for the last N quotations
 ### GET /api/currency/major-difference/{currencyCode}/{n}
@@ -51,6 +67,11 @@ Returns the maximum and minimum average exchange rates for the specified currenc
 - `{n}`: An integer representing the number of quotations to consider (up to 255).
 
 Returns the major difference between the buy and ask rates for the specified currency over the last N quotations.
+
+Example request:
+```
+curl -X GET "http://localhost:8080/api/currency/major-difference/GBP/255" -H "accept: */*"
+```
 
 ## Optional Features
 
