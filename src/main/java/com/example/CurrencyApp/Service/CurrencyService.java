@@ -7,6 +7,7 @@ import com.example.CurrencyApp.Exception.ApplicationExceptions.InvalidQuotationA
 import com.example.CurrencyApp.Model.ExchangeRateTableSingle;
 import com.example.CurrencyApp.Model.Rate;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.DoubleSummaryStatistics;
 
@@ -42,13 +43,11 @@ public class CurrencyService {
         validateCurrencyCode(code);
         validateQuotationsNumber(n);
         ExchangeRateTableSingle callResponse = nbpApiCaller.getSellRates(code, n);
-        Double majorDiffValue = callResponse.getRates().stream()
+        return callResponse.getRates().stream()
                 .mapToDouble(Rate -> Math.abs(Rate.getAsk() - Rate.getBid()))
                 .map(d -> Math.round(d * 10000.0) / 10000.0)
                 .max()
                 .orElseThrow(RuntimeException::new);
-
-        return majorDiffValue;
     }
 
     private void validateCurrencyCode(String code) {

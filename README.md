@@ -5,7 +5,7 @@ return plain simple data after performing certain internal operations.
 The goal is to query data from the Narodowy Bank Polski's public APIs and return relevant information from them.
 #### Used technologies:
 * Java 17
-* Spring 2.6.7
+* Spring 2.7.11
 * Swagger-UI 3.0.0
 * JUnit 5
 * Docker

@@ -3,10 +3,11 @@ package com.example.CurrencyApp.Model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
-public class Rate {
+public class Rate implements Serializable {
     @JsonProperty("no")
     private String no;
     @JsonProperty("effectiveDate")
