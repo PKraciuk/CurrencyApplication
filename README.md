@@ -33,21 +33,21 @@ The server exposes the following endpoints:
 Returns the average exchange rate for the specified currency on the specified date.
 
 
-# 2. Get max and min average exchange rate for a currency for the last N days
+# 2. Get max and min average exchange rate for a currency for the last N quotations
 ### GET /api/currency/extrema/{currencyCode}/{n}
 - `{currencyCode}`: A three-letter currency code from the NBP's table A (e.g., USD, EUR).
-- `{n}`: An integer representing the number of days to consider (up to 255).
+- `{n}`: An integer representing the number of quotations to consider (up to 255).
 
 Returns the maximum and minimum average exchange rates for the specified currency over the last N quotations.
 
 
-# 3. Get major difference between buy and ask rate for a currency for the last N days
+# 3. Get major difference between buy and ask rate for a currency for the last N quotations
 ### GET /api/currency/major-difference/{currencyCode}/{n}
 
 - `{currencyCode}`: A three-letter currency code from the NBP's table C (e.g., USD, EUR).
 - `{n}`: An integer representing the number of quotations to consider (up to 255).
 
-Returns the major difference between the buy and ask rates for the specified currency over the last N days.
+Returns the major difference between the buy and ask rates for the specified currency over the last N quotations.
 
 ## Optional Features
 
