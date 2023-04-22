@@ -16,20 +16,19 @@ The goal is to query data from the Narodowy Bank Polski's public APIs and return
 To build and run the project using Docker, follow these steps:
 
 1. Clone the repository to your local machine: 
-    ```
-    Git Clone https://github.com/PKraciuk/CurrencyApplication
-    ```
-
+   ```
+   git clone https://github.com/PKraciuk/CurrencyApplication
+   ```
 2. Build the Docker image by running this command after entering repository main folder : 
    ```
-   Docker build -t ImageName* .
+   docker build -t image-name .
    ```
 3. Run the Docker container: 
    ```
-   Docker run ImageName* -p 8080:8080* -t ApplicationName*
+   docker run --name container-name -p 8080:8080 -t image-name
    ```
 
-*The marked values can be changed as needed
+*image-name, ports and container-name can be changed as needed, it is required though to use lowercase for image-name. 
 
 
 ### Swagger-ui (assuming 8080 port was selected)
