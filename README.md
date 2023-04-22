@@ -1,4 +1,4 @@
-# Narodowy Bank Polski API Wrapper
+# Currency Application
 
 This is a Java 17 Spring-based project that implements a simple runnable local server that exposes endpoints which take arguments and return plain simple data after performing certain internal operations. The goal is to query data from the Narodowy Bank Polski's public APIs and return relevant information from them.
 
