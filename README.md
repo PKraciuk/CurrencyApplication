@@ -9,6 +9,7 @@ The goal is to query data from the Narodowy Bank Polski's public APIs and return
 * Swagger-UI 3.0.0
 * JUnit 5
 * Docker
+* Redis
 
 ## Getting Started
 
@@ -35,9 +36,10 @@ To build and run the project using Docker, follow these steps:
 ``` 
 http://localhost:8080/swagger-ui/#/
 ```
-
 # Endpoints
+
  The server exposes the following endpoints:
+### All calls to NBP api are being cached for 5 minutes
 
 ## 1. Get average exchange rate for a currency on a specific date
 ### GET /api/currency/current-rate/{currencyCode}/{date}
