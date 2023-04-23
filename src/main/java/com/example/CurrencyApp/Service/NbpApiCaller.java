@@ -50,7 +50,7 @@ public class NbpApiCaller {
 
     public ResponseEntity<ExchangeRateTableSingle> performGetRequest(String path) {
         try {
-            log.debug("Performing GET request to endpoint - " + path);  //to verify caching is working correctly
+            log.info("Performing GET request to endpoint - " + path);  //to verify caching is working correctly
             return restTemplate.getForEntity(path, ExchangeRateTableSingle.class);
         } catch (HttpClientErrorException ex) {
             handleRequestError(ex);

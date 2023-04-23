@@ -19,13 +19,9 @@ To build and run the project using Docker, follow these steps:
    ```
    git clone https://github.com/PKraciuk/CurrencyApplication
    ```
-2. Build the Docker image by running this command after entering repository main folder : 
+2. Build the application running this command after entering repository main folder : 
    ```
-   docker build -t image-name .
-   ```
-3. Run the Docker container: 
-   ```
-   docker run --name container-name -p 8080:8080 -t image-name
+   docker-compose up
    ```
 
 *image-name, ports and container-name can be changed as needed, it is required though to use lowercase for image-name. 
