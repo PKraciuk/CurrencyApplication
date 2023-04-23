@@ -19,7 +19,7 @@ To build and run the project using Docker, follow these steps:
    ```
    git clone https://github.com/PKraciuk/CurrencyApplication
    ```
-2. Build the application running this command after entering repository main folder : 
+2. Run the application running this command after entering repository main folder : 
    ```
    docker-compose up
    ```
